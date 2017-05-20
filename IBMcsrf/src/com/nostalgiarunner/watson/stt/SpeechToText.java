@@ -26,6 +26,53 @@ public class SpeechToText {
 		System.out.println(getSTTToken());
 	}
 
+//	private String getSTTToken(){
+//		BufferedReader reader = null;
+//	    try {
+//	    	String[] orig = getCSRF().split(" BREAK ");
+//	    	String cookie = orig[1];
+//	    	String csrf = orig[0];
+//	        SSLSocketFactory factory=(SSLSocketFactory) SSLSocketFactory.getDefault();
+//	        SSLSocket s = (SSLSocket) factory.createSocket(InetAddress.getByName("speech-to-text-demo.mybluemix.net"), 443);
+//	    	PrintWriter pw = new PrintWriter(s.getOutputStream());
+//	    	pw.println("POST /api/token HTTP/1.1");
+//	    	pw.println("Host: speech-to-text-demo.mybluemix.net");
+//	    	pw.println("Connection: keep-alive");
+//	    	pw.println("Content-Length: 0");
+//	    	pw.println("csrf-token: " + csrf);
+//	    	pw.println("Origin: https://speech-to-text-demo.mybluemix.net");
+//	    	pw.println("User-Agent: " + agent);
+//	    	pw.println("Accept: */*");
+//	    	pw.println("Referer: https://speech-to-text-demo.mybluemix.net/");
+//	    	pw.println("Accept-Encoding: gzip, deflate, br");
+//	    	pw.println("Accept-Language: en-US,en;q=0.8");
+//	    	pw.println("Cookie: _csrf=" + cookie);
+//	    	pw.println("");
+//	    	pw.flush();
+//	    	BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+//	    	try {
+//	    	String token = null;
+//	    	String t;
+//	    	while((t = br.readLine()) != null) {
+//	    	if (!t.equals("0")){
+//	    	token = t;
+//	    	} else {
+//	    		br.close();
+//	    		s.close();
+//	    		return token;
+//	    	}
+//	    	}
+//	    	br.close();
+//	    	s.close();
+//	    	return null;
+//	    	} catch (IOException e){
+//	    	}
+//	    } catch (Exception e){
+//	    	e.printStackTrace();
+//	    }
+//		return null;
+//	}
+	
 	public static String getSTTToken(){
 		BufferedReader reader = null;
 	    try {
